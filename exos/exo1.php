@@ -27,8 +27,23 @@ require_once '../inc/functions.php';
  *      echo $mario->lives; // Display: 3
  */
 
+// Création de la classe "Mario" qui est, selon Mac Lesggy dans sa vidéo
+// de présentation de la PlayStation, un pizzaiolo... Mais on ne lui en
+// voudra pas trop.
+class Mario {
 
+    // On déclare la propriétés de la classe, les vies
+    public $lives;
 
+    // On déclare la méthode "construct" afin de lui mettre le paramètre "vies"
+    public function __construct($lives = 3) {
+        // On fait référence à l'objet en cours d'utilisation
+        $this->lives = $lives; 
+    }
+}
+
+// Et maintenant, allons dépenser toutes ces vies dans les canalisations
+// J'aurais tout aussi bien pu faire "public $lives = 3;"
 
 
 
