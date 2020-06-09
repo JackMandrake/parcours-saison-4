@@ -29,9 +29,42 @@ require_once '../inc/functions.php';
  *      echo $luigi->getLives(); // Display: 4
  */
 
+// Création de la classe Hero, ca y est on bosse en famille.
+class Hero {
+    public $name;
+    private $lives;
 
+    // Bon, les vies, tout ca, on commence à être rodé.
+    public function __construct($name,$lives = 3) {
+        $this->name = $name;
+        $this->lives = $lives;      
+    }
 
+    // Fonction de présentation du personnage, c'est important la politesse
+    // je retourne ce que le "echo" devras faire. J'avais commencer par faire un echo,
+    // mais je me retrouvais avec 2 occurence de la phrase, sans changer de frangin...
+    public function hello() {
+        return "It's me, "."$this->name"."!";
+    }
 
+    // J'ai remis toutes les autres fonction pour le bon déroulement des exemples
+    public function getLives() {
+        return $this->lives;
+    }
+    // La fonction "Bowser" qui permet de soustraire une vie au compteur
+    public function takeHit() {
+        return $this->lives--;
+    }
+
+    // La fonction "Green Mushrroms" qui permet d'ajouter une vie au compteur
+    public function up() {
+        return $this->lives++;
+    }
+
+    
+}
+
+// Je vois bien que je ne suis pas le seule à m'amuser avec les commentaires
 
 /*
  * Tests
