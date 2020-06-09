@@ -35,9 +35,36 @@ require_once '../inc/functions.php';
  *      $mario->up();
  *      echo $mario->getLives(); // Display: 4
  */
+class Mario {
 
+    // On déclare la propriété de la classe toujours en "private"
+    // inaccessible en dehors de la classe
+    private $lives;
 
+    // On déclare la méthode "construct" afin de lui mettre le paramètre "vies" comme sur l'exo1 et 2
+    public function __construct($lives = 3) {
+        // Toujours pareil à l'exo1
+        $this->lives = $lives;
+    }
 
+    // Pour récupérer le nombre de vie, on créer une fonction pour renvoyer le Nb de vie en dehors de la classe
+    public function getLives() {
+       
+        return $this->lives;
+
+    }
+    // La fonction "Bowser" qui permet de soustraire une vie au compteur
+    public function takeHit() {
+        return $this->lives--;
+    }
+
+    // La fonction "Green Mushrroms" qui permet d'ajouter une vie au compteur
+    public function up() {
+        return $this->lives++;
+    }
+}
+
+// Merci Mario ! Mais notre Princesse est dans un autre château !
 
 /*
  * Tests
